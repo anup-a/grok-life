@@ -1,0 +1,42 @@
+{
+  "name": "grok-life",
+  "version": "0.1.0",
+  "description": "Set up Grok Bot like a real, working life setup: your Chief of Staff creates Inbox, Calendar, Health, Bills, Search and more, with real routines.",
+  "type": "module",
+  "bin": {
+    "grok-life": "bin/grok-life.mjs"
+  },
+  "files": [
+    "bin",
+    "src",
+    "catalog",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "grok",
+    "grok-bot",
+    "xai",
+    "agents",
+    "personal-assistant",
+    "chief-of-staff",
+    "bot-template",
+    "routines"
+  ],
+  "author": "Anup Aglawe",
+  "license": "MIT",
+  "homepage": "https://github.com/anup-a/grok-life#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anup-a/grok-life.git"
+  },
+  "bugs": {
+    "url": "https://github.com/anup-a/grok-life/issues"
+  }
+}
