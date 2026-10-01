@@ -8,13 +8,15 @@
 
 [![Watch the grok-life video](docs/poster.jpg)](docs/demo.mp4)
 
-grok-life copies a real Grok Bot setup (14 Bots that run every day for one person) and makes it yours. Your Chief of Staff asks a few questions, creates the Bots you pick, briefs each one, and then manages them for you.
+**[Add to Grok Bot](https://x.ai/bot/Tj8ICZNA6RrGar_CAYhD9)**
+
+That link adds the Life bot. It asks a few questions, creates the Bots you pick, briefs each one, and then manages them for you.
 
 ```sh
 npx grok-life
 ```
 
-It copies a setup message and opens Grok Bot. Open your **Chief of Staff** (or click **+**, then **Create new Bot**), paste, and send.
+`npx grok-life` copies the same setup message and opens Grok Bot. Open your **Chief of Staff** (or click **+**, then **Create new Bot**), paste, and send.
 
 ## What you get
 
