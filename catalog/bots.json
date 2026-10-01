@@ -96,7 +96,7 @@
     {
       "id": "health",
       "name": "Health",
-      "tagline": "Lab reports, prescriptions, follow-ups and daily habits, kept private",
+      "tagline": "Lab reports, follow-ups and your wearable's daily read, kept private",
       "group": "life",
       "default": true,
       "avatar": {
@@ -104,7 +104,7 @@
         "color": "yellow"
       },
       "connectors": [
-        "Wearable (optional, for example Ultrahuman)"
+        "Wearable (optional): Apple Watch, WHOOP, Garmin, Oura or Ultrahuman"
       ],
       "asks": [],
       "hands_off_to": [],
@@ -119,8 +119,34 @@
         {
           "name": "Morning wearable read",
           "cron": "24 9 * * *",
-          "optional": "Only if the user connects a wearable (Ultrahuman, Oura, Whoop) through a connector or API token.",
-          "content": "Pull {{USER}}'s wearable daily metrics for today ({{TZ}}) from the connected wearable. Never put tokens on a command line or in chat. Archive the day under health-records/wearable and load recent days for context. Sleep may still be syncing: if sleep looks far shorter than recent nights, say the pull may be incomplete instead of alarming them. Then send an interpretive morning read, not a raw number dump: 2 to 4 concrete observations (sleep timing and duration, HRV vs resting heart rate, recovery vs yesterday's load) and one practical implication for the day. A short metric line only as backup. No diagnosis, no supplement dosing. Under about 8 sentences. If auth fails twice across runs, pause this routine and tell them to reconnect."
+          "optional": "Only if the user has a wearable (Apple Watch, WHOOP, Garmin, Oura, Ultrahuman) and connects it the way the Wearables list describes.",
+          "content": "Pull {{USER}}'s daily metrics for today ({{TZ}}) from their wearable, the way it was connected (export folder, official API, or connector). Never put tokens on a command line or in chat. Archive the day under health-records/wearable and load recent days for context. Sleep may still be syncing: if sleep looks far shorter than recent nights, say the pull may be incomplete instead of alarming them. Then send an interpretive morning read, not a raw number dump: 2 to 4 concrete observations (sleep timing and duration, HRV vs resting heart rate, recovery vs yesterday's load) and one practical implication for the day. A short metric line only as backup. No diagnosis, no supplement dosing. Under about 8 sentences. If auth fails twice across runs, pause this routine and tell them to reconnect."
+        }
+      ],
+      "wearables": [
+        {
+          "name": "Apple Watch / Apple Health",
+          "how": "Apple has no cloud API. Ask the user to install an export app on their iPhone (for example Health Auto Export) that saves daily JSON or CSV automatically to a folder you can read: Google Drive through its connector, or iCloud Drive on their computer if you have local computer access. Read the newest export each morning."
+        },
+        {
+          "name": "WHOOP",
+          "how": "Use WHOOP's official developer API (OAuth app at developer.whoop.com: recovery, strain, sleep, workouts). Walk the user through creating the app and signing in, store the tokens as a secret on your computer, and refresh them when they expire. A remote WHOOP MCP server added as a custom connector also works."
+        },
+        {
+          "name": "Garmin",
+          "how": "Garmin has no official personal API. If the user agrees, use a community Garmin Connect library or MCP server on your computer with their login saved as a secret (never in chat), and tell them it is unofficial and can break when Garmin changes things."
+        },
+        {
+          "name": "Oura",
+          "how": "Use Oura's official API (OAuth app at cloud.ouraring.com): sleep, readiness, activity, heart rate. Store tokens as a secret."
+        },
+        {
+          "name": "Ultrahuman",
+          "how": "Use the Ultrahuman connector if it is in Connect apps, or the Ultrahuman partner API with a personal token saved as a secret (Ultrahuman Vision issues it)."
+        },
+        {
+          "name": "Several devices",
+          "how": "Open Wearables (openwearables.io, open source, self-hosted) gives one API for Garmin, WHOOP, Oura, Apple Health, Polar, Suunto and Strava, for users who run it themselves."
         }
       ]
     },

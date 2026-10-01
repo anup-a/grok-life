@@ -116,3 +116,11 @@ test("covers every Bot and routine in the original setup", { skip: !fs.existsSyn
 test("fill handles underscore placeholders", () => {
   assert.equal(fill("{{SECOND_LABEL}} inbox", { SECOND_LABEL: "School" }), "School inbox");
 });
+
+test("Health explains how to connect each wearable", () => {
+  const health = catalog.bots.find((b) => b.id === "health");
+  const names = health.wearables.map((w) => w.name).join(" ");
+  for (const device of ["Apple", "WHOOP", "Garmin", "Oura", "Ultrahuman"]) assert.ok(names.includes(device), device);
+  const text = playbook(catalog);
+  assert.ok(text.includes("- Wearables:") && text.includes("developer.whoop.com"));
+});

@@ -23,7 +23,7 @@ It copies a setup message and opens Grok Bot. Open your **Chief of Staff** (or c
 | **Inbox** | Personal Gmail: only what needs a reply or a decision, drafts in your voice | Weekday triage, 08:30 |
 | **2nd Inbox** | A second Gmail (school or work), kept apart from your personal inbox | Weekday triage, 08:00 |
 | **Calendar** | Today and tomorrow, conflicts, prep, protected mornings | Weekday briefing, 07:02 |
-| **Health** | Lab reports, prescriptions, follow-ups and daily habits, kept private | Habit check-in, wearable read (optional) |
+| **Health** | Lab reports, follow-ups and your wearable's daily read (Apple Watch, WHOOP, Garmin, Oura, Ultrahuman), kept private | Habit check-in, wearable read (optional) |
 | **Bills** | Card and utility due dates; speaks up only when something is due or changed | Weekday check, monthly EMI heads-up |
 | **Credit Card Max** | Which card to use for a purchase, and perks you are leaving unused | Monthly rollup |
 | **Search** | Sourced web research for you and your other Bots | |

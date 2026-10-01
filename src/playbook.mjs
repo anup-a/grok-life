@@ -26,6 +26,10 @@ function botSection(bot, values) {
     lines.push("- Do NOT create this Bot yourself. Bridge is set up from the user's computer: tell them to run `npx grok-life bridge` in Terminal and follow its steps. It needs Grok Bot's Execution on Local Computer setting.");
   }
   lines.push(`- Description: ${fill(bot.brief, values)}`);
+  if (bot.wearables?.length) {
+    lines.push("- Wearables: ask which one the user has (if any), then connect it this way:");
+    for (const w of bot.wearables) lines.push(`  - ${w.name}: ${w.how}`);
+  }
   for (const r of bot.routines) lines.push(routineLine(r, values));
   return lines.join("\n");
 }
